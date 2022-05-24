@@ -1,0 +1,628 @@
+/*===========GERAL ============*/ 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --primary-color: #11ADDE;
+    --dark-primary-color: #006A8B;
+    --paragraph-color: #EFF8FB;
+    --secondary-color: #082F53;
+    --light-color: #D9F5FF;
+    --nav-height: 7.2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
+    text-align: center;
+
+    overflow: overlay;
+}
+
+.wrapper {
+    width: min(50rem, 100%);
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+section {
+    padding-block: 16rem;
+}
+
+section header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--secondary-color);
+}
+
+section img {
+    display: block;
+    padding: 0;
+    max-width: 100%;
+}
+
+.button {
+    background-color:var(--secondary-color);
+
+    border: none;
+    border-radius: 4rem;
+
+    margin-bottom: 6rem;
+
+    padding: 1.6rem 3.2rem;
+    width: fit-content;
+
+    color: #FFFF;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    text-decoration: none;
+
+    transition: background .2s;
+}
+
+.button:hover {
+    background-color: var(--brand-dark);
+}
+
+
+/*============NAVIGATION MENU ==========*/
+
+nav {
+    display: flex;
+    background-color: var(--primary-color);
+    height: var(--nav-height);
+
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    z-index:100;
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav .menu,
+nav .close-menu {
+    position: fixed;
+}
+
+
+
+/*=========MENU EXPANDED=======*/
+
+body.menu-expanded {
+    overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+    visibility: hidden;
+}
+
+body.menu-expanded .menu {
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: var(--nav-height) ;
+    transition: opacity 700ms;
+}
+
+ul {
+    list-style: none;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu, 
+.close-menu,
+body.menu-expanded .open-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button {
+    position: relative;
+    z-index: 100;
+
+    
+}
+
+body.menu-expanded button {
+    stroke: white;
+   
+}
+
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    align-items: center;
+
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button {
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding: 16px 32;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+    margin-left: 4rem;
+}
+
+.menu .button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    filter: brightness(1.3);
+}
+
+
+/*===========HOME/INCIO==========*/
+
+#home::before {
+    content: '';
+    width: 100%;
+    height: calc(76% + var(--nav-height));
+
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#home {
+    padding-block: 0;
+    padding-top: calc(4.1rem + var(--nav-height));
+
+}
+
+#home .wrapper {
+    width: 100%;
+}
+
+#home h1 {
+    font-size: 3.6rem; 
+    color: var(--secondary-color);
+}
+
+#home p {
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    border-radius: 0.8rem;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+#home img {
+    width:21.6rem ;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+/*=========SERVICES========*/ 
+
+#services {
+    display: flex;
+    margin: 0;
+
+}
+
+#services header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+    text-align: left;
+    width: 18.7rem;
+    height: 5.7rem;
+    color: var(--secondary-color);
+}
+
+#services header ul li {
+    text-align: left;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    text-decoration: none;
+    width: 24.3rem;
+}
+
+#services .cards {
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+
+#services .card {
+    width: 32.5rem;
+    align-items: center;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+#services .card-two {
+    align-self: center;
+    width: 19.3rem;
+    margin: auto;
+    margin-top: 4rem;
+
+}
+
+/*============CONTACT======*/ 
+
+#contact {
+    text-align: left;
+}
+
+#contact header {
+    margin-bottom: 3.2rem;
+}
+
+
+#contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+ 
+#contact ul il {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;   
+}
+
+#contact img {
+    display: flex;
+    width: 26.8rem;
+    margin: auto;
+
+}
+
+#contact .button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    filter: brightness(1.1);
+}
+
+
+
+
+/*=========FOOTER==========*/
+
+
+footer {
+    background-color: var(--primary-color);
+    padding-block: 4rem;
+    text-align: left;
+
+}
+
+
+footer p {
+    color: var(--paragraph-color);
+    line-height: 2;
+    font-size: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+
+footer .social-link {
+    display: flex;
+    margin: 0vh;
+    justify-content: flex-start;
+}
+
+/*=========BACK TO TOP BUTTON==========*/
+
+#BackToTopButton {
+    position: fixed;
+
+    bottom: 1rem;
+    right: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 200ms;
+}
+
+#BackToTopButton.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*==========RESPONSIVE============*/
+
+@media (min-width:1024px) {
+
+/*============GERAL============*/
+
+body {
+    overflow: auto;
+}
+
+.wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+}
+
+.col-a {
+    grid-area: A;
+}
+
+.col-b {
+    grid-area: B;
+}
+
+section {
+    padding-block: 16rem;
+}
+
+section header h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+}
+
+/*============NAVIGATION===============*/
+
+/* RESET */
+
+nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    position: initial;
+    font-size: initial;
+    font-weight: initial;
+    transform: initial;
+    color: initial;
+    background-color: initial;
+}
+
+nav#navigation .close-menu,
+nav#navigation .open-menu,
+nav#navigation .social-link {
+    display: none;
+}
+
+nav#navigation .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+nav#navigation .menu ul:nth-child(1) {
+    display: flex;
+    gap: 3.2rem;
+}
+
+nav#navigation .menu ul li a {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+nav#navigation .menu a.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.4rem;
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 4rem;
+
+
+    color: var(--secondary-color);
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+}
+
+nav#navigation.scroll .menu a.button {
+    border-color: var(--light-color);
+    color: var(--light-color);
+}
+
+nav#navigation.scroll .menu ul li a {
+    color: var(--light-color);
+}
+
+nav#navigation .menu li a {
+    transition: opacity .4s;
+}
+
+nav#navigation .menu li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--paragraph-color);
+
+    position: relative;
+    bottom: -1.8rem;
+    left: -0.5rem;
+
+    display: block;
+
+    transition: width 0.2s;
+}
+
+nav#navigation.scroll .menu li a::after {
+    background-color: white;
+
+}
+
+nav#navigation .menu li a:hover::after {
+    padding-inline: 0.8rem;
+    width: 100%;
+}
+
+/*========HOME=========*/
+
+#home::before {
+    height: calc(90% - var(--nav-height));
+}
+
+#home {
+    padding-top: var(--nav-height);
+}
+
+#home .wrapper {
+    grid-template-columns: 60.5rem 1fr;
+    grid-template-areas: 
+    'A B'
+    'C C';
+}
+
+#home .col-a {
+    text-align: left;
+    align-self: center;
+}
+
+#home .col-b {
+    grid-area: B;
+    align-self: center;
+}
+
+#home h1 {
+    font-size: 5.2rem;
+}
+
+#home .content p {
+    font-size: 1.8rem;
+}
+
+#home .button {
+    margin: 0;
+}
+
+#home .button {
+    margin: 0;
+}
+
+
+#home img {
+    width: 30rem;
+}
+
+/*========SERVICES=========*/
+
+#services h2 {
+    width: 30rem;
+    margin-inline: auto;
+    padding-bottom: 8rem;
+}
+
+
+#services .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#services .card {
+    width: 48%;
+    flex-grow: 1;
+    align-self: flex-end;
+    margin: auto;
+    padding-left: 10rem;
+    align-items: center;
+}
+
+#services .card-two {
+    margin: auto;
+    width: 24%;
+    flex-grow: 1;
+}
+
+/*=========CONTACT=======*/
+
+#contact .wrapper {
+    grid-template-columns: 1fr 57.5rem ;
+    grid-template-areas: 'A B';
+    gap: 6.7rem;
+}
+
+#contact h2 {
+    width: 55rem;
+}
+
+
+#contact .content ul li {
+    
+    margin-bottom: 0;
+}
+
+#contact img {
+    width: 45.2rem;
+}
+
+/*==========FOOTER===========*/
+
+footer {
+    padding-block: 8rem;
+}
